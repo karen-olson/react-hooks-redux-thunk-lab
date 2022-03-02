@@ -5,7 +5,9 @@ import CatList from "./CatList";
 
 function Cats() {
   // get data from state with useSelector
-  const cats = useSelector((state) => state.entities);
+  const cats = useSelector((state) => state);
+
+  console.log({ cats });
   const dispatch = useDispatch();
   // send the list of cat pics to CatList to render
 
@@ -16,7 +18,7 @@ function Cats() {
   return (
     <div>
       <h1>CatBook</h1>
-      {cats.length > 0 ? <CatList cats={cats} /> : null}
+      <CatList cats={cats} />
     </div>
   );
 }
